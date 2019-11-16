@@ -19,6 +19,7 @@ class EndpointSecurity {
         var authenticationMethod: String
     }
     var connections: [Connection] = []
+    var isConnected: Bool = false
     var connectionsRaw: String = ""
     
     init() {
@@ -34,9 +35,8 @@ class EndpointSecurity {
     }
     
     func parseConnectionsRaw() {
-        var connections = self.connectionsRaw.components(separatedBy: "Conn")
+        var connections = self.connectionsRaw.components(separatedBy: "Conn ")
         let connection = connections[1]
-        print(self.connections)
         let tset: [String] = connection.components(separatedBy: "\n\t")
         
         let name: String = getName(connectionInfoRaw: connection)
@@ -53,6 +53,12 @@ class EndpointSecurity {
                 gateway = valueKey[1]
             case "status":
                 status = valueKey[1]
+                // Check connected or not
+                if (valueKey[1] == "Connected") {
+                    self.isConnected = true
+                } else {
+                    self.isConnected = false
+                }
             case "active site":
                 isActive = NSString(string: valueKey[1]).boolValue
             case "firewall policy":
@@ -73,9 +79,11 @@ class EndpointSecurity {
     
     func connect(sitename: String, username: String, password: String) {
         RunCommand.task(launchPath: self.path, arguments: ["connect", "-s", sitename, "-u", username, "-p", password])
+        self.isConnected = true
     }
     
     func disconnect() {
         RunCommand.task(launchPath: self.path, arguments: ["disconnect"])
+        self.isConnected = false
     }
 }
