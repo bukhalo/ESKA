@@ -744,23 +744,20 @@
                                     <action selector="UsernameInputHandler:" target="XfG-lQ-9wD" id="gMz-0D-dF6"/>
                                 </connections>
                             </textField>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8eY-os-Tit">
-                                <rect key="frame" x="159" y="155" width="162" height="21"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Server" drawsBackground="YES" id="Eoe-Lg-Ngo">
+                            <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WlL-O8-XeO">
+                                <rect key="frame" x="157" y="160" width="167" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="RPg-lm-LDA">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                                <connections>
-                                    <action selector="ServerInputHandler:" target="XfG-lQ-9wD" id="uJW-ja-kS8"/>
-                                </connections>
-                            </textField>
+                                    <menu key="menu" id="S3K-G7-Fds"/>
+                                </popUpButtonCell>
+                            </popUpButton>
                         </subviews>
                     </view>
                     <connections>
                         <outlet property="PasswordInput" destination="pa6-EF-Yts" id="ald-cK-uoA"/>
-                        <outlet property="ServerInput" destination="8eY-os-Tit" id="p7J-x3-yTh"/>
+                        <outlet property="SitenameSelect" destination="WlL-O8-XeO" id="aod-jW-EDR"/>
                         <outlet property="UsernameInput" destination="ViD-i6-FZy" id="P9S-Rs-fWQ"/>
                     </connections>
                 </viewController>
