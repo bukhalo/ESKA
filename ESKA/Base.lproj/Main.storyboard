@@ -756,6 +756,7 @@
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="ConnectButton" destination="eEr-1D-kqc" id="PBn-qf-yoT"/>
                         <outlet property="PasswordInput" destination="pa6-EF-Yts" id="ald-cK-uoA"/>
                         <outlet property="SitenameSelect" destination="WlL-O8-XeO" id="aod-jW-EDR"/>
                         <outlet property="UsernameInput" destination="ViD-i6-FZy" id="P9S-Rs-fWQ"/>
