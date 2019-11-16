@@ -76,8 +76,12 @@ class ViewController: NSViewController {
         }
         
         let token = keychain[key]
-        UsernameInput.stringValue = key
-        PasswordInput.stringValue = token as! String
+        
+        if (token != nil) {
+            UsernameInput.stringValue = key
+            PasswordInput.stringValue = token as! String
+        }
+        
         // Do any additional setup after loading the view.
     }
     
