@@ -3,12 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		151B9FB2237FD6F000261DD0 /* RunCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151B9FB1237FD6F000261DD0 /* RunCommand.swift */; };
 		151B9FB4237FF05A00261DD0 /* EndpointSecurity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151B9FB3237FF05A00261DD0 /* EndpointSecurity.swift */; };
+		151B9FB7238061DF00261DD0 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 151B9FB6238061DF00261DD0 /* KeychainAccess */; };
 		15D97223237DD13E00330FCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D97222237DD13E00330FCE /* AppDelegate.swift */; };
 		15D97225237DD13E00330FCE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D97224237DD13E00330FCE /* ViewController.swift */; };
 		15D97227237DD14100330FCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15D97226237DD14100330FCE /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				151B9FB7238061DF00261DD0 /* KeychainAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +87,9 @@
 			dependencies = (
 			);
 			name = ESKA;
+			packageProductDependencies = (
+				151B9FB6238061DF00261DD0 /* KeychainAccess */,
+			);
 			productName = ESKA;
 			productReference = 15D9721F237DD13E00330FCE /* ESKA.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +118,9 @@
 				Base,
 			);
 			mainGroup = 15D97216237DD13E00330FCE;
+			packageReferences = (
+				151B9FB5238061DF00261DD0 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+			);
 			productRefGroup = 15D97220237DD13E00330FCE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -278,14 +286,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ESKA/ESKA.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = BZ246722VP;
 				INFOPLIST_FILE = ESKA/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 0.1.1;
+				MARKETING_VERSION = 0.1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = robotmafia.ESKA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -297,14 +307,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ESKA/ESKA.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = BZ246722VP;
 				INFOPLIST_FILE = ESKA/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 0.1.1;
+				MARKETING_VERSION = 0.1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = robotmafia.ESKA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -333,6 +345,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		151B9FB5238061DF00261DD0 /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		151B9FB6238061DF00261DD0 /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 151B9FB5238061DF00261DD0 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 15D97217237DD13E00330FCE /* Project object */;
 }
