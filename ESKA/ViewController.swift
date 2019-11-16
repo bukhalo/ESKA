@@ -9,9 +9,9 @@
 import Cocoa
 
 class ViewController: NSViewController {
-    @IBOutlet weak var ServerInput: NSTextField!
-    @IBAction func ServerInputHandler(_ sender: NSTextField) {
-    }
+    let connections = EndpointSecurity().connections
+    
+    @IBOutlet weak var SitenameSelect: NSPopUpButton!
     
     
     @IBOutlet weak var UsernameInput: NSTextField!
@@ -26,16 +26,21 @@ class ViewController: NSViewController {
     
     
     @IBAction func ConnectButtonHandler(_ sender: NSButton) {
-        let server = ServerInput.stringValue
+        let sitename = connections[SitenameSelect.indexOfSelectedItem].name
         let username = UsernameInput.stringValue
         let password = PasswordInput.stringValue
         
-        RunCommand.task(launchPath: "/Library/Application Support/Checkpoint/Endpoint Connect/command_line", arguments: ["connect", "-s", server, "-u", username, "-p", password])
+        EndpointSecurity().connect(sitename: sitename, username: username, password: password)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        var connectionNames: [String] = []
+        for connection in connections {
+            connectionNames.append(connection.name)
+        }
+        SitenameSelect.addItems(withTitles: connectionNames)
+        
         // Do any additional setup after loading the view.
     }
 
