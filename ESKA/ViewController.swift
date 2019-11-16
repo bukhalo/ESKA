@@ -9,7 +9,7 @@
 import Cocoa
 
 class ViewController: NSViewController {
-    let connections = EndpointSecurity().connections
+    let endpoint = EndpointSecurity()
     
     @IBOutlet weak var SitenameSelect: NSPopUpButton!
     
@@ -25,23 +25,46 @@ class ViewController: NSViewController {
     }
     
     
+    @IBOutlet weak var ConnectButton: NSButton!
     @IBAction func ConnectButtonHandler(_ sender: NSButton) {
-        let sitename = connections[SitenameSelect.indexOfSelectedItem].name
+        let sitename = endpoint.connections[SitenameSelect.indexOfSelectedItem].name
         let username = UsernameInput.stringValue
         let password = PasswordInput.stringValue
         
-        EndpointSecurity().connect(sitename: sitename, username: username, password: password)
+        print(endpoint.isConnected)
+        
+        if (!endpoint.isConnected) {
+            endpoint.connect(sitename: sitename, username: username, password: password)
+            SitenameSelect.isEnabled = false
+            UsernameInput.isEnabled = false
+            PasswordInput.isEnabled = false
+            ConnectButton.title = "Disconnect"
+        } else {
+            endpoint.disconnect()
+            SitenameSelect.isEnabled = true
+            UsernameInput.isEnabled = true
+            PasswordInput.isEnabled = true
+            ConnectButton.title = "Connect"
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         var connectionNames: [String] = []
-        for connection in connections {
+        for connection in endpoint.connections {
             connectionNames.append(connection.name)
         }
         SitenameSelect.addItems(withTitles: connectionNames)
-        
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear() {
+        if (endpoint.isConnected) {
+            SitenameSelect.isEnabled = false
+            UsernameInput.isEnabled = false
+            PasswordInput.isEnabled = false
+            ConnectButton.title = "Disconnect"
+        }
     }
 
     override var representedObject: Any? {
