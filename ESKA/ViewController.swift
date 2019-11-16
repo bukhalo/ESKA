@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import KeychainAccess
 
 class ViewController: NSViewController {
     let endpoint = EndpointSecurity()
@@ -30,6 +31,15 @@ class ViewController: NSViewController {
         let sitename = endpoint.connections[SitenameSelect.indexOfSelectedItem].name
         let username = UsernameInput.stringValue
         let password = PasswordInput.stringValue
+        
+        let keychain: Keychain
+        let service = sitename
+        if (!sitename.isEmpty) {
+            keychain = Keychain(service: service)
+        } else {
+            keychain = Keychain()
+        }
+        keychain[username] = password
         
         print(endpoint.isConnected)
         
@@ -55,6 +65,19 @@ class ViewController: NSViewController {
             connectionNames.append(connection.name)
         }
         SitenameSelect.addItems(withTitles: connectionNames)
+        let keychain: Keychain
+        keychain = Keychain(service: connectionNames[0])
+        var key: String = ""
+        let items = keychain.allItems()
+        for item in items {
+            if (item["service"] as! String == connectionNames[0]) {
+                key = item["key"] as! String
+            }
+        }
+        
+        let token = keychain[key]
+        UsernameInput.stringValue = key
+        PasswordInput.stringValue = token as! String
         // Do any additional setup after loading the view.
     }
     
