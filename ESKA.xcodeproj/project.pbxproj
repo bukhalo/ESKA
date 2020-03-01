@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		151B9FB2237FD6F000261DD0 /* RunCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151B9FB1237FD6F000261DD0 /* RunCommand.swift */; };
 		151B9FB4237FF05A00261DD0 /* EndpointSecurity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151B9FB3237FF05A00261DD0 /* EndpointSecurity.swift */; };
-		151B9FB7238061DF00261DD0 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 151B9FB6238061DF00261DD0 /* SwiftPackageProductDependency */; };
+		151B9FB7238061DF00261DD0 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 151B9FB6238061DF00261DD0 /* KeychainAccess */; };
 		15D97223237DD13E00330FCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D97222237DD13E00330FCE /* AppDelegate.swift */; };
 		15D97225237DD13E00330FCE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D97224237DD13E00330FCE /* ViewController.swift */; };
 		15D97227237DD14100330FCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15D97226237DD14100330FCE /* Assets.xcassets */; };
@@ -37,7 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				151B9FB7238061DF00261DD0 /* BuildFile in Frameworks */,
+				151B9FB7238061DF00261DD0 /* KeychainAccess in Frameworks */,
 				D5EA309566E66F57CC906AD6 /* Pods_ESKA.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -92,7 +92,6 @@
 				93276196B5BF894E846CF276 /* Pods-ESKA.debug.xcconfig */,
 				4DDBCB8A454491DE6B334C31 /* Pods-ESKA.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -114,7 +113,7 @@
 			);
 			name = ESKA;
 			packageProductDependencies = (
-				151B9FB6238061DF00261DD0 /* SwiftPackageProductDependency */,
+				151B9FB6238061DF00261DD0 /* KeychainAccess */,
 			);
 			productName = ESKA;
 			productReference = 15D9721F237DD13E00330FCE /* ESKA.app */;
@@ -145,7 +144,7 @@
 			);
 			mainGroup = 15D97216237DD13E00330FCE;
 			packageReferences = (
-				151B9FB5238061DF00261DD0 /* RemoteSwiftPackageReference */,
+				151B9FB5238061DF00261DD0 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
 			);
 			productRefGroup = 15D97220237DD13E00330FCE /* Products */;
 			projectDirPath = "";
@@ -347,7 +346,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 0.1.4;
+				MARKETING_VERSION = 0.1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = robotmafia.ESKA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -369,7 +368,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 0.1.4;
+				MARKETING_VERSION = 0.1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = robotmafia.ESKA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -400,7 +399,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		151B9FB5238061DF00261DD0 /* RemoteSwiftPackageReference */ = {
+		151B9FB5238061DF00261DD0 /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess";
 			requirement = {
@@ -411,9 +410,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		151B9FB6238061DF00261DD0 /* SwiftPackageProductDependency */ = {
+		151B9FB6238061DF00261DD0 /* KeychainAccess */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 151B9FB5238061DF00261DD0 /* RemoteSwiftPackageReference */;
+			package = 151B9FB5238061DF00261DD0 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
 			productName = KeychainAccess;
 		};
 /* End XCSwiftPackageProductDependency section */
