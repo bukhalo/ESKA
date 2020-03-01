@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		151B9FB2237FD6F000261DD0 /* RunCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151B9FB1237FD6F000261DD0 /* RunCommand.swift */; };
 		151B9FB4237FF05A00261DD0 /* EndpointSecurity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151B9FB3237FF05A00261DD0 /* EndpointSecurity.swift */; };
-		151B9FB7238061DF00261DD0 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 151B9FB6238061DF00261DD0 /* KeychainAccess */; };
+		151B9FB7238061DF00261DD0 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 151B9FB6238061DF00261DD0 /* SwiftPackageProductDependency */; };
 		15D97223237DD13E00330FCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D97222237DD13E00330FCE /* AppDelegate.swift */; };
 		15D97225237DD13E00330FCE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D97224237DD13E00330FCE /* ViewController.swift */; };
 		15D97227237DD14100330FCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15D97226237DD14100330FCE /* Assets.xcassets */; };
 		15D9722A237DD14100330FCE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15D97228237DD14100330FCE /* Main.storyboard */; };
+		D5EA309566E66F57CC906AD6 /* Pods_ESKA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C1EF9965B41ED49631858B6 /* Pods_ESKA.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,9 @@
 		15D97229237DD14100330FCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		15D9722B237DD14100330FCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		15D9722C237DD14100330FCE /* ESKA.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ESKA.entitlements; sourceTree = "<group>"; };
+		4C1EF9965B41ED49631858B6 /* Pods_ESKA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ESKA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4DDBCB8A454491DE6B334C31 /* Pods-ESKA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ESKA.release.xcconfig"; path = "Target Support Files/Pods-ESKA/Pods-ESKA.release.xcconfig"; sourceTree = "<group>"; };
+		93276196B5BF894E846CF276 /* Pods-ESKA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ESKA.debug.xcconfig"; path = "Target Support Files/Pods-ESKA/Pods-ESKA.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,7 +37,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				151B9FB7238061DF00261DD0 /* KeychainAccess in Frameworks */,
+				151B9FB7238061DF00261DD0 /* BuildFile in Frameworks */,
+				D5EA309566E66F57CC906AD6 /* Pods_ESKA.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,6 +50,8 @@
 			children = (
 				15D97221237DD13E00330FCE /* ESKA */,
 				15D97220237DD13E00330FCE /* Products */,
+				A802FA140B066573A4B04E30 /* Pods */,
+				4ED3F28C1A51C19943B15ACE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +78,24 @@
 			path = ESKA;
 			sourceTree = "<group>";
 		};
+		4ED3F28C1A51C19943B15ACE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4C1EF9965B41ED49631858B6 /* Pods_ESKA.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A802FA140B066573A4B04E30 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				93276196B5BF894E846CF276 /* Pods-ESKA.debug.xcconfig */,
+				4DDBCB8A454491DE6B334C31 /* Pods-ESKA.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -78,6 +103,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 15D9722F237DD14100330FCE /* Build configuration list for PBXNativeTarget "ESKA" */;
 			buildPhases = (
+				9E7E6A4FA7D5ACB4F7C6D9FF /* [CP] Check Pods Manifest.lock */,
 				15D9721B237DD13E00330FCE /* Sources */,
 				15D9721C237DD13E00330FCE /* Frameworks */,
 				15D9721D237DD13E00330FCE /* Resources */,
@@ -88,7 +114,7 @@
 			);
 			name = ESKA;
 			packageProductDependencies = (
-				151B9FB6238061DF00261DD0 /* KeychainAccess */,
+				151B9FB6238061DF00261DD0 /* SwiftPackageProductDependency */,
 			);
 			productName = ESKA;
 			productReference = 15D9721F237DD13E00330FCE /* ESKA.app */;
@@ -119,7 +145,7 @@
 			);
 			mainGroup = 15D97216237DD13E00330FCE;
 			packageReferences = (
-				151B9FB5238061DF00261DD0 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+				151B9FB5238061DF00261DD0 /* RemoteSwiftPackageReference */,
 			);
 			productRefGroup = 15D97220237DD13E00330FCE /* Products */;
 			projectDirPath = "";
@@ -141,6 +167,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9E7E6A4FA7D5ACB4F7C6D9FF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ESKA-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		15D9721B237DD13E00330FCE /* Sources */ = {
@@ -283,6 +334,7 @@
 		};
 		15D97230237DD14100330FCE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93276196B5BF894E846CF276 /* Pods-ESKA.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ESKA/ESKA.entitlements;
@@ -304,6 +356,7 @@
 		};
 		15D97231237DD14100330FCE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4DDBCB8A454491DE6B334C31 /* Pods-ESKA.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ESKA/ESKA.entitlements;
@@ -347,7 +400,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		151B9FB5238061DF00261DD0 /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+		151B9FB5238061DF00261DD0 /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess";
 			requirement = {
@@ -358,9 +411,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		151B9FB6238061DF00261DD0 /* KeychainAccess */ = {
+		151B9FB6238061DF00261DD0 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 151B9FB5238061DF00261DD0 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			package = 151B9FB5238061DF00261DD0 /* RemoteSwiftPackageReference */;
 			productName = KeychainAccess;
 		};
 /* End XCSwiftPackageProductDependency section */
