@@ -17,7 +17,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        MSAppCenter.start("90741bb7-d103-4003-9a58-f985fa9dac5b", withServices:[
+        MSAppCenter.start("04281cc3-0793-468b-a77a-ef310ef58b99", withServices:[
           MSAnalytics.self,
           MSCrashes.self
         ])
