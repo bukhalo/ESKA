@@ -7,6 +7,9 @@
 //
 
 import Cocoa
+import AppCenter
+import AppCenterAnalytics
+import AppCenterCrashes
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -14,7 +17,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
+        MSAppCenter.start("04281cc3-0793-468b-a77a-ef310ef58b99", withServices:[
+          MSAnalytics.self,
+          MSCrashes.self
+        ])
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -23,4 +29,3 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 
 }
-
